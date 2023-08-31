@@ -1,6 +1,12 @@
 # Overview
 This repository provides a prototype implementation for the Unity game engine of the approach for analyzing game actions described in _Automatically Defining Game Action Spaces for Exploration Using Program Analysis_ (AIIDE-23). The code and instructions in this repository provide everything needed to set up Random and reinforcement learning (DQN) agents for automatically exploring a given game using our automated analysis to define the action spaces of the environments. The instructions also explain how to measure the various metrics used in the paper (including state coverage, code coverage, run time, and action counts).
 
+# Capabilities and Limitations
+- This tool will analyze any key, button, axis, and mouse inputs handled in the game logic via Unity's Input API, generating a discrete action space for the game. The provided Random and DQN agents then automatically explore the game by determining and generating relevant inputs determined by the analysis.
+- The new Input System APIs are _not_ supported (only the original `UnityEngine.Input` API)
+- This tool does not analyze Unity UI system components. An initialization script should be defined to traverse through any menus to the initial point of gameplay (see [Defining New Environments](#defining_new_envs)).
+- Neither inputs handled inside of coroutines, nor those handled in assemblies other than the main assembly (Assembly-CSharp.dll) are supported
+
 # Games
 The following publicly available GitHub games were used in experiments with this tool. Example environment code for these games can be found in the `Examples` folder.
 * GH1: [science-mario](https://github.com/lucasnfe/science-mario) 
@@ -11,12 +17,6 @@ The following publicly available GitHub games were used in experiments with this
 * GH6: [Fruit-Ninja-Replica](https://github.com/Mohammed-Benotmane/Fruit-Ninja-Replica)
 * GH7: [bubble-shooter-unity3d](https://github.com/javierquevedo/bubble-shooter-unity3d)
 * GH8: [AngryBirds](https://github.com/sarveshchavan7/AngryBirds)
-
-# Capabilities and Limitations
-- This tool will analyze any key, button, axis, and mouse inputs handled in the game logic via Unity's Input API, generating a discrete action space for the game. The provided Random and DQN agents then automatically explore the game by determining and generating relevant inputs determined by the analysis.
-- The new Input System APIs are _not_ supported (only the original `UnityEngine.Input` API)
-- This tool does not analyze Unity UI system components. An initialization script should be defined to traverse through any menus to the initial point of gameplay (see [Defining New Environments](#defining_new_envs)).
-- Neither inputs handled inside of coroutines, nor those handled in assemblies other than the main assembly (Assembly-CSharp.dll) are supported
 
 # Instruction Video
 The following video explains and demonstrates how to use the tool. You can also follow the written [Step By Step Instructions](#step_by_step) below.
