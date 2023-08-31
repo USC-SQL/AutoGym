@@ -81,38 +81,38 @@ cp -r Examples/UnityTetrisEnv ../UnityTetris/Assets
 
 Go to Window -> Package Manager. Click the plus sign, then "Add package by name..." and add "com.unity.nuget.newtonsoft-json".
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/745018f4-d2e4-4267-a52a-553dbb04181f)
+![image](doc/745018f4-d2e4-4267-a52a-553dbb04181f.png)
 
 If there are any remaining script compile errors, add the "com.unity.ugui" package as well.
 
 8. Open the first scene of the game (scene "Main" for UnityTetris).
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/5b6de5fa-d676-46b6-9344-9d9b489e592e)
+![image](doc/5b6de5fa-d676-46b6-9344-9d9b489e592e.png)
 
 Create a new game object in the root of the scene (in our example we will create one named "GameEnv"), and add the environment script component (in our example, `UnityTetrisEnv`).
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/58a2f0a3-1aa0-46c5-b87a-8dcee98d6bdc)
+![image](doc/58a2f0a3-1aa0-46c5-b87a-8dcee98d6bdc.png)
 
 9. Go to File -> Build Settings, and press the "Add Open Scenes" button. This will configure the game build.
-![image](https://github.com/svolokh/AutoGym/assets/61521182/40eb92ca-af7a-489b-86ff-7f6e1d13a9cd)
+![image](doc/40eb92ca-af7a-489b-86ff-7f6e1d13a9cd.png)
 
 10. Go to the AutoGym -> Configure menu.
  
-<img src="https://github.com/svolokh/AutoGym/assets/61521182/c920e3cf-79e1-43e3-8bd5-4e3c5bd0e481">
+![image](doc/c920e3cf-79e1-43e3-8bd5-4e3c5bd0e481.png)
 
 Select the location of `UnityActionAnalysis` (or `UnityActionAnalysis.exe` on Windows) in the build directory noted in step 4.
 
-<img src="https://github.com/svolokh/AutoGym/assets/61521182/a0b907ca-d8a8-4b75-9c2e-8ab2fe32eb70">
+![image](doc/a0b907ca-d8a8-4b75-9c2e-8ab2fe32eb70.png)
 
 11. Go to the AutoGym -> Build Gym Environment menu. This will prompt you to select a folder where the built game will be saved. We will create a folder named "unitytetris_env" and select it.
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/f20c1522-c025-42bc-8207-12284864c9cf)
+![image](doc/f20c1522-c025-42bc-8207-12284864c9cf.png)
 
 12. The Console will now display the progress of the action analysis. When the analysis, build, and instrumentation is complete a dialog will pop up with the message "Environment build successful."
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/d79fdb0b-6a70-4d43-8ccc-f85b97e9d9b4)
+![image](doc/d79fdb0b-6a70-4d43-8ccc-f85b97e9d9b4.png)
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/26e804f8-be97-4067-bd86-27f0c8a3fb27)
+![image](doc/26e804f8-be97-4067-bd86-27f0c8a3fb27.png)
 
 13. In the build folder, there are now two configuration files generated (one for Random, `unitytetris_env_random_aa.json`, and one for DQN, `unitytetris_env_dqn_s84x4_count_aa.json`).
 From the AutoGym repository, the following command can now be issued to start a Random agent:
@@ -126,7 +126,7 @@ python run.py unitytetris_env/unitytetris_env_random_aa.json
 
 This will cause the game to open and the random agent to begin interacting with the game, simulating relevant inputs on the game determined by the action analysis. On Windows, make sure to press the "Allow" button on the firewall pop-up to ensure the agent code can communicate with the game process.
 
-![image](https://github.com/svolokh/AutoGym/blob/main/doc/unitytetris_random.gif?raw=true)
+![image](doc/unitytetris_random.gif)
 
 To run the DQN agent, use the `unitytetris_env_dqn_s84x4_count_aa.json` configuration file instead. This will run a curiosity-driven reinforcement learning agent that takes game screenshots as input and learns over time to prioritize actions leading to new states.
 
@@ -149,7 +149,7 @@ dotnet tool install --global altcover.global --version 8.5.841
 
 Next, you will need to build the game environment with code coverage enabled. At step 11 of the instructions, instead run AutoGym -> Build Gym Environment (with Code Coverage).
 
-![image](https://github.com/svolokh/AutoGym/assets/61521182/1c51cf65-7491-440a-b466-d74426d07169)
+![image](doc/1c51cf65-7491-440a-b466-d74426d07169.png)
 
 A dialog will pop up prompting you to indicate the path of the altcover executable. This can typically be found at `C:\Users\<user>\.dotnet\tools\altcover.exe` on Windows, and `/home/<user>/.dotnet/tools/altcover` on Linux. Follow the rest of the instructions as usual to run the random or DQN agents.
 
@@ -253,7 +253,7 @@ python -m unittest tests.test_dqn
 
 # Experiment Data
 
-CSV files of the paper's experiment data have been provided in the [doc/data directory](https://github.com/svolokh/AutoGym/tree/main/doc/data).
+CSV files of the paper's experiment data have been provided in the [doc/data directory](https://github.com/USC-SQL/AutoGym/tree/main/doc/data).
 
 # Citation
 
