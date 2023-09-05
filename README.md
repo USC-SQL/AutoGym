@@ -65,7 +65,7 @@ MSBuild version 17.3.0+92e077650 for .NET
   UnityActionAnalysisTests -> C:\Users\sasha-usc\Documents\Research\AIIDE2023\AutoGym\ActionAnalysis\UnityActionAnalysisTests\bin\x64\Debug\net6.0\UnityActionAnalysisTests.dll
 </pre>
 
-5. Copy (or symlink) the `AutoGymScripts` folder into the Assets folder of the game.
+5. Copy (or symlink) the `AutoGymScripts` folder into the Assets folder of the game (either on command-line or with a GUI file manager).
 ```
 cp -r AutoGymScripts ../UnityTetris/Assets
 ```
@@ -89,7 +89,7 @@ If there are any remaining script compile errors, add the "com.unity.ugui" packa
 
 ![image](doc/5b6de5fa-d676-46b6-9344-9d9b489e592e.png)
 
-Create a new game object in the root of the scene (in our example we will create one named "GameEnv"), and add the environment script component (in our example, `UnityTetrisEnv`).
+Create a new game object in the root of the scene (in our example we will create one named "GameEnv"), and add the environment script component (in our example, `UnityTetrisEnv`). Save the scene after making this change.
 
 ![image](doc/58a2f0a3-1aa0-46c5-b87a-8dcee98d6bdc.png)
 
