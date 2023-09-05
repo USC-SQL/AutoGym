@@ -75,7 +75,7 @@ cp -r AutoGymScripts ../UnityTetris/Assets
 cp -r Examples/UnityTetrisEnv ../UnityTetris/Assets
 ```
 
-6. Open the game in Unity (for UnityTetris, it is OK for Unity to update the project files if needed). Note that it is OK if you encounter a script compile error here, this will be addressed in the next step.
+6. Open the game in Unity. For the UnityTetris example, allow Unity to upgrade the project files to your (more recent) version of Unity. Note that it is OK if you encounter a script compile error here, this will be addressed in the next step.
 
 7. Install the Newtonsoft.Json package through Unity's package manager:
 
